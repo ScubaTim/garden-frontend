@@ -12,7 +12,7 @@ const GardenView = ({ plantsData, setPlantsData, toggleGardenView }) => {
     if (toggleGardenView) {
         return (
             <div className="pb-4">
-                <span style={{ color: "#f3f6a3" }} className="font-weight-bold h4">Garden View</span>
+                <span style={{ color: "#f3f6a3" }} className="font-weight-bold h1">Garden View</span>
                 <Container style={{ border: "3px solid khaki", backgroundColor: "white", borderRadius: "4px" }}>
                     <Row className="d-flex p-3 justify-content-between">
                         {gardenMapper()}
