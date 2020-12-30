@@ -20,10 +20,9 @@ const Toolbar = () => {
     const toggle = () => setIsOpen(!isOpen);
 
     return (
-        <div>
+        <div className="mb-5">
             <Navbar color="light" light expand="md">
                 <NavbarBrand href="/">Gardenly</NavbarBrand>
-                <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
@@ -44,7 +43,7 @@ const Toolbar = () => {
                         </UncontrolledDropdown>
                     </Nav>
                 </Collapse>
-                <Button color="success" ><span className="font-weight-bold">+</span> New Plant</Button>
+                <Button color="success ml-auto" ><span className="font-weight-bold">+</span> New Plant</Button>
             </Navbar>
         </div>
     );
