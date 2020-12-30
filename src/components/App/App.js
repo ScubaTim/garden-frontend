@@ -17,7 +17,7 @@ const App = () => {
       .catch(err => console.log('There was an error getting plants', err))
   }, [])
 
-  console.log('App level', plantsData)
+  //console.log('App level', plantsData)
 
   return (
     <>

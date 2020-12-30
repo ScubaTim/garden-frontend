@@ -3,12 +3,12 @@ import PlantView from '../plantview/PlantView'
 import PlantCard from '../plantCard/PlantCard'
 import { Container, Row, Col } from 'reactstrap';
 
-const GardenView = (props) => {
+const GardenView = ({ plantsData }) => {
     const [existingGarden, setExistingGarden] = useState(true)
-    const gardenMapper = () => {
-        props.plantsData.map((plant) => <PlantCard plant={plant} />)
-    }
 
+    const gardenMapper = () => {
+        return plantsData.map((plant) => <PlantCard key={plant._id} plant={plant} />)
+    }
 
     return (
         <Container>
