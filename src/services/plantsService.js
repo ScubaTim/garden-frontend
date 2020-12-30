@@ -1,9 +1,12 @@
 import axios from 'axios'
+const baseURL = '/plants'
 
-
-const getPlants = () => {
-    const request = axios.get('/plants')
-    return request.then(response => response.data).catch(err => console.log('error in plantsService', err))
+export const getPlants = () => {
+    const request = axios.get(baseURL)
+    return request.then(response => response.data)
 }
 
-export default getPlants
+export const create = (newObject) => {
+    const request = axios.post(baseURL, newObject)
+    return request.then(response => response.data)
+}

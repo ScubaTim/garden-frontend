@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import getPlants from '../../services/plantsService'
+import { getPlants } from '../../services/plantsService'
 import { Container } from 'reactstrap'
 import Toolbar from '../toolbar/Toolbar'
 import GardenView from '../gardenView/GardenView'
@@ -21,9 +21,9 @@ const App = () => {
 
   return (
     <>
-      <Toolbar />
+      <Toolbar plantsData={plantsData} />
       <Container className="App">
-        {loggedIn ? <GardenView plantsData={plantsData} /> : <UserLogin />}
+        {loggedIn ? <GardenView plantsData={plantsData} setPlantsData={setPlantsData} /> : <UserLogin />}
       </Container>
     </>
   );

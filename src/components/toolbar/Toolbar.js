@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     Collapse,
     Navbar,
-    NavbarToggler,
     NavbarBrand,
     Nav,
     NavItem,
@@ -14,16 +13,21 @@ import {
     Button
 } from 'reactstrap';
 
-const Toolbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+const Toolbar = ({ plantsData }) => {
 
-    const toggle = () => setIsOpen(!isOpen);
+    const plantsDropdown = () => {
+        plantsData.map(plant => (
+            <DropdownItem key={plant._id}>
+                {plant.name}
+            </DropdownItem>
+        ))
+    }
 
     return (
         <div className="mb-5">
             <Navbar color="light" light expand="md">
                 <NavbarBrand href="/">Gardenly</NavbarBrand>
-                <Collapse isOpen={isOpen} navbar>
+                <Collapse navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
                             <NavLink className="text-dark" href="https://github.com/reactstrap/reactstrap">About</NavLink>
@@ -33,12 +37,9 @@ const Toolbar = () => {
                                 Plants List
                             </DropdownToggle>
                             <DropdownMenu right>
-                                <DropdownItem>
-                                    Plant 1
-                                </DropdownItem>
-                                <DropdownItem>
-                                    Plant 2
-                                </DropdownItem>
+                                <div>
+                                    {plantsDropdown()}
+                                </div>
                             </DropdownMenu>
                         </UncontrolledDropdown>
                     </Nav>
