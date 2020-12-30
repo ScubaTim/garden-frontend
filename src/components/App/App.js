@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import getPlants from '../../services/plantsService'
 import { Container } from 'reactstrap'
 import Toolbar from '../toolbar/Toolbar'
 import GardenView from '../gardenView/GardenView'
@@ -10,21 +10,20 @@ const App = () => {
   const [plantsData, setPlantsData] = useState([])
 
   useEffect(() => {
-    axios
-      .get("/plants")
-      .then(response => {
-        setPlantsData(response)
+    getPlants()
+      .then(initialPlants => {
+        setPlantsData(initialPlants)
       })
-      .catch(err => console.log('error getting data', err))
-  })
-  console.log(plantsData)
+      .catch(err => console.log('There was an error getting plants', err))
+  }, [])
+
+  console.log('App level', plantsData)
 
   return (
     <>
       <Toolbar />
       <Container className="App">
-        {loggedIn ? <GardenView /> : <UserLogin />}
-        {plantsData}
+        {loggedIn ? <GardenView plantsData={plantsData} /> : <UserLogin />}
       </Container>
     </>
   );
