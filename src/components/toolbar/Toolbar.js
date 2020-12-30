@@ -1,27 +1,9 @@
 import React from 'react';
 import {
-    Collapse,
-    Navbar,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    Button
+    Collapse, Navbar, NavbarBrand, Nav, NavItem, NavLink, Button
 } from 'reactstrap';
 
-const Toolbar = ({ plantsData }) => {
-
-    const plantsDropdown = () => {
-        plantsData.map(plant => (
-            <DropdownItem key={plant._id}>
-                {plant.name}
-            </DropdownItem>
-        ))
-    }
+const Toolbar = ({ toggleGardenView, setToggleGardenView }) => {
 
     return (
         <div className="mb-5">
@@ -32,19 +14,9 @@ const Toolbar = ({ plantsData }) => {
                         <NavItem>
                             <NavLink className="text-dark" href="https://github.com/reactstrap/reactstrap">About</NavLink>
                         </NavItem>
-                        <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle className="text-dark" nav caret>
-                                Plants List
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                                <div>
-                                    {plantsDropdown()}
-                                </div>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
                     </Nav>
                 </Collapse>
-                <Button color="success ml-auto" ><span className="font-weight-bold">+</span> New Plant</Button>
+                <Button onClick={() => setToggleGardenView(!toggleGardenView)} color="success">{toggleGardenView ? <span><span className="font-weight-bold">+</span> New Plant</span> : 'Garden View'}</Button>
             </Navbar>
         </div>
     );

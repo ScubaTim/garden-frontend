@@ -7,6 +7,7 @@ import UserLogin from '../userLogin/UserLogin'
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(true)
+  const [toggleGardenView, setToggleGardenView] = useState(true)
   const [plantsData, setPlantsData] = useState([])
 
   useEffect(() => {
@@ -17,13 +18,13 @@ const App = () => {
       .catch(err => console.log('There was an error getting plants', err))
   }, [])
 
-  //console.log('App level', plantsData)
+
 
   return (
     <>
-      <Toolbar plantsData={plantsData} />
+      <Toolbar plantsData={plantsData} toggleGardenView={toggleGardenView} setToggleGardenView={setToggleGardenView} />
       <Container className="App">
-        {loggedIn ? <GardenView plantsData={plantsData} setPlantsData={setPlantsData} /> : <UserLogin />}
+        {loggedIn ? <GardenView plantsData={plantsData} setPlantsData={setPlantsData} toggleGardenView={toggleGardenView} /> : <UserLogin />}
       </Container>
     </>
   );

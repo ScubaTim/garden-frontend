@@ -3,9 +3,8 @@ import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
 import image from '../../images/1.png'
 
 const PlantCard = ({ plant }) => {
-    console.log('plantCard', plant)
     return (
-        <Card className="text-center m-3" style={{ width: "180px" }}>
+        <Card className="text-center m-3" style={{ width: "180px", backgroundColor: "honeydew" }}>
             <CardBody>
                 <CardTitle tag="h4">{plant.name}</CardTitle>
                 <CardText className="text-muted">
