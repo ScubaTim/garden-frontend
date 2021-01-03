@@ -10,7 +10,7 @@ const PlantCard = ({ plant, plantsData, setPlantsData }) => {
             .then(removed => removed)
             .catch(err => console.log("There was an error removing note. Error: ", err))
 
-        setPlantsData(plantsData.filter(p => p._id !== plant._id))
+        setPlantsData(plantsData.filter(p => p.id !== plant.id))
     }
 
     return (
