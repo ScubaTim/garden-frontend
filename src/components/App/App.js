@@ -24,7 +24,7 @@ const App = () => {
     <>
       <Toolbar plantsData={plantsData} toggleGardenView={toggleGardenView} setToggleGardenView={setToggleGardenView} />
       <Container className="App">
-        {loggedIn ? <GardenView plantsData={plantsData} setPlantsData={setPlantsData} toggleGardenView={toggleGardenView} /> : <UserLogin />}
+        {loggedIn ? <GardenView plantsData={plantsData} setPlantsData={setPlantsData} toggleGardenView={toggleGardenView} setToggleGardenView={setToggleGardenView} /> : <UserLogin />}
       </Container>
     </>
   );

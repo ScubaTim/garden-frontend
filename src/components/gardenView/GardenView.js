@@ -3,8 +3,8 @@ import PlantView from '../plantview/PlantView'
 import PlantCard from '../plantCard/PlantCard'
 import { Container, Row } from 'reactstrap';
 
-const GardenView = ({ plantsData, setPlantsData, toggleGardenView }) => {
-    console.log('plantsData ', plantsData)
+const GardenView = ({ plantsData, setPlantsData, toggleGardenView, setToggleGardenView }) => {
+    console.log('plantsData', plantsData)
     const gardenMapper = () => {
         return plantsData.map((plant) => <PlantCard key={plant.id} plant={plant} plantsData={plantsData} setPlantsData={setPlantsData} />)
     }
@@ -28,7 +28,7 @@ const GardenView = ({ plantsData, setPlantsData, toggleGardenView }) => {
                 <span style={{ color: "#f3f6a3" }} className="font-weight-bold h1">Add Plant</span>
                 <Container style={{ border: "3px solid khaki", borderRadius: "4px" }}>
                     <Row className="d-flex p-0 justify-content-between">
-                        <PlantView plantsData={plantsData} setPlantsData={setPlantsData} />
+                        <PlantView plantsData={plantsData} setPlantsData={setPlantsData} toggleGardenView={toggleGardenView} setToggleGardenView={setToggleGardenView} />
                     </Row>
                 </Container>
             </div>

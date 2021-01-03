@@ -3,7 +3,7 @@ import { create } from '../../services/plantsService'
 import { Col, Button, Form, FormGroup, FormText, Label, Input, Card, CardBody } from 'reactstrap';
 
 
-const PlantView = ({ plantsData, setPlantsData }) => {
+const PlantView = ({ plantsData, setPlantsData, toggleGardenView, setToggleGardenView }) => {
     const [name, setName] = useState('')
     // const [scientificName, setScientificName] = useState('')
     // const [heirloom, setHeirloom] = useState(false)
@@ -42,6 +42,8 @@ const PlantView = ({ plantsData, setPlantsData }) => {
                 setPlantsData(plantsData.concat(returnedPlant))
             })
             .catch(err => console.log('There was an error submitting a plant', err))
+
+        setToggleGardenView(!toggleGardenView)
     }
 
     return (
