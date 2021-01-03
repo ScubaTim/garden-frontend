@@ -12,8 +12,8 @@ const GardenView = ({ plantsData, setPlantsData, toggleGardenView, setToggleGard
     if (toggleGardenView) {
         return (
             <div className="pb-4">
-                <span style={{ color: "#f3f6a3" }} className="font-weight-bold h1">Garden View</span>
-                <Container style={{ border: "3px solid khaki", backgroundColor: "white", borderRadius: "4px" }}>
+                <span style={{ color: "#ffffb5" }} className="font-weight-bold h1">Garden View</span>
+                <Container style={{ border: "3px solid #ffffb5", backgroundColor: "#99b898", borderRadius: "4px" }}>
                     <Row className="d-flex p-3 justify-content-between">
                         {gardenMapper()}
                     </Row>

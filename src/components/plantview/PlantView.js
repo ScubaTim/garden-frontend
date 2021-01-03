@@ -47,7 +47,7 @@ const PlantView = ({ plantsData, setPlantsData, toggleGardenView, setToggleGarde
     }
 
     return (
-        <Card body className="px-4 pt-5 pb-2" style={{ borderRadius: "0" }}>
+        <Card body className="px-4 pt-5 pb-2" style={{ borderRadius: "0", backgroundColor: "#f8f8f4" }}>
             <CardBody className="pt-0">
                 <Form onSubmit={handleAddPlant}>
                     <FormGroup row>
