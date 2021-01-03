@@ -1,13 +1,23 @@
 import React from 'react'
 import { Row, Col, Card, CardBody, CardTitle, CardText, Button } from 'reactstrap';
 import image from '../../images/1.png'
+import { remove } from '../../services/plantsService'
 
-const PlantCard = ({ plant }) => {
+const PlantCard = ({ plant, plantsData, setPlantsData }) => {
+
+    const handleRemovePlant = () => {
+        remove(plant.id)
+            .then(removed => removed)
+            .catch(err => console.log("There was an error removing note. Error: ", err))
+
+        setPlantsData(plantsData.filter(p => p._id !== plant._id))
+    }
+
     return (
-        <Card className="text-center m-3" style={{ width: "180px", backgroundColor: "honeydew" }}>
+        <Card className="text-center m-3" style={{ width: "180px", backgroundColor: "ivory" }}>
             <Row className="px-2 pt-1">
                 <Col>
-                    <Button className="close"><span aria-hidden="true">&times;</span></Button>
+                    <Button close onClick={handleRemovePlant} />
                 </Col>
             </Row>
             <CardBody className="pt-0">

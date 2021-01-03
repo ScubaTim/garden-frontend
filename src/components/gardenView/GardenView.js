@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PlantView from '../plantview/PlantView'
 import PlantCard from '../plantCard/PlantCard'
 import { Container, Row } from 'reactstrap';
 
 const GardenView = ({ plantsData, setPlantsData, toggleGardenView }) => {
-
+    console.log('plantsData ', plantsData)
     const gardenMapper = () => {
-        return plantsData.map((plant) => <PlantCard key={plant._id} plant={plant} />)
+        return plantsData.map((plant) => <PlantCard key={plant.id} plant={plant} plantsData={plantsData} setPlantsData={setPlantsData} />)
     }
 
     if (toggleGardenView) {
