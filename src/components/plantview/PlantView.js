@@ -21,9 +21,7 @@ const PlantView = ({ plantsData, setPlantsData, toggleGardenView, setToggleGarde
     //const [spacing, setSpacing] = useState(0)
     //const [daysToMature, setDaysToMature] = useState(0)
     //const [sproutsIn, setSproutsIn] = useState(0)
-    const [image, setImage] = useState([])
-
-    console.log('image', image)
+    const [imageURL, setImageURL] = useState('')
 
     const handleAddPlant = (e) => {
         e.preventDefault()
@@ -38,7 +36,7 @@ const PlantView = ({ plantsData, setPlantsData, toggleGardenView, setToggleGarde
             // sunlight,
             // soilType,
             // watering,
-            image,
+            imageURL,
             //heirloom,
             //growingZone,
             //idealTemp,
@@ -62,22 +60,28 @@ const PlantView = ({ plantsData, setPlantsData, toggleGardenView, setToggleGarde
             <CardBody className="pt-0">
                 <Form onSubmit={handleAddPlant}>
                     <FormGroup row>
-                        <Label for="plantName" sm={2}>Plant Name</Label>
+                        <Label className="h5" for="plantName" sm={2}>Plant Name</Label>
                         <Col sm={10}>
                             <Input type="text" name="plantName" required onChange={(e) => setName(e.target.value)} id="plantName" placeholder="Enter plant name" />
                         </Col>
                     </FormGroup>
                     <FormGroup row>
-                        <Label for="scientificName" sm={2}>Scientific Name</Label>
+                        <Label className="h5" for="scientificName" sm={2}>Scientific Name</Label>
                         <Col sm={10}>
                             <Input type="text" name="scientificName" required onChange={(e) => setScientificName(e.target.value)} id="scientificName" placeholder="Enter scientific name" />
                         </Col>
                     </FormGroup>
-
                     <FormGroup row>
-                        <Label for="description" sm={2}>Description</Label>
+                        <Label className="h5" for="description" sm={2}>Description</Label>
                         <Col sm={10}>
                             <Input type="textarea" name="description" required onChange={(e) => setDescription(e.target.value)} id="description" placeholder="Write a brief description" />
+                        </Col>
+                    </FormGroup>
+                    <FormGroup row>
+                        <Label className="h5" for="image" sm={2}>Image URL</Label>
+                        <Col sm={10}>
+                            <Input type="text" name="imageURL" required onChange={(e) => setImageURL(e.target.value)} id="imageURL" placeholder="Enter a URL" />
+                            <p className="text-muted mt-2 font-italic">Enter a complete URL linking to your plant's image. We suggest using <a className="text-muted font-weight-bold" href="https://www.google.com/photos/about/">Google Photos</a></p>
                         </Col>
                     </FormGroup>
                     {/* <FormGroup row>
@@ -130,15 +134,7 @@ const PlantView = ({ plantsData, setPlantsData, toggleGardenView, setToggleGarde
                             </Input>
                         </Col>
                     </FormGroup> */}
-                    <FormGroup row>
-                        <Label for="exampleFile" sm={2}>Image</Label>
-                        <Col sm={10}>
-                            <Input type="file" name="file" id="exampleFile" onChange={(e) => setImage(Array.from(e.target.files))} />
-                            <FormText color="muted">
-                                Please upload a plant image!
-                            </FormText>
-                        </Col>
-                    </FormGroup>
+
                     <Button type="submit" className="mt-5" block size="lg" color="success">Submit</Button>
                 </Form>
             </CardBody>
