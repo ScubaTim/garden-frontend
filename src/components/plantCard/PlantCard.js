@@ -19,10 +19,14 @@ const PlantCard = ({ plant, plantsData, setPlantsData }) => {
         setToggleModal(!toggleModal)
     }
 
+    const plantImage = () => {
+        plant.image.map(img => console.log(img))
+    }
+    plantImage()
+
     return (
         <Card className="text-center  m-3" style={{ width: "180px", backgroundColor: "#f8f8f4" }}>
-            <Modal toggleModal={toggleModal} setToggleModal={setToggleModal} />
-
+            <Modal toggleModal={toggleModal} setToggleModal={setToggleModal} plant={plant} />
             <Row className="px-2 pt-1">
                 <Col>
                     <Button close onClick={handleRemovePlant} />
@@ -31,18 +35,19 @@ const PlantCard = ({ plant, plantsData, setPlantsData }) => {
             <CardBody className="pt-0 pb-2">
                 <Row style={{ marginTop: "-8px" }}>
                     <Col>
+
                         <CardTitle tag="h4">{plant.name}</CardTitle>
+
                     </Col>
                 </Row>
-
-                <CardText className="text-muted">
-                    <span>Scientific name</span>
-                </CardText>
                 <hr className="mt-0 p-0" />
+                <CardText className="text-muted">
+                    <span>{plant.scientificName}</span>
+                </CardText>
 
                 <img style={{ width: "120px" }} src={image} alt="placeholder" />
 
-                <Button size="sm" block color="success" outline className="mt-3" onClick={() => togglePlantModal()}>Details</Button>
+                <Button size="sm" block color="success" className="mt-3" onClick={() => togglePlantModal()}>More Info</Button>
             </CardBody >
         </Card>
     )

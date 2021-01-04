@@ -6,7 +6,7 @@ import {
 const Toolbar = ({ toggleGardenView, setToggleGardenView }) => {
 
     return (
-        <div className="mb-5">
+        <div className="mb-4">
             <Navbar light expand="md" style={{ backgroundColor: "#f8f8f4" }}>
                 <NavbarBrand href="/">Gardenly</NavbarBrand>
                 <Collapse navbar>

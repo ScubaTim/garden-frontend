@@ -1,14 +1,15 @@
 import React from 'react';
 import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 
-const PlantModal = ({ toggleModal, setToggleModal }) => {
+const PlantModal = ({ toggleModal, setToggleModal, plant }) => {
 
     return (
         <div>
             <Modal isOpen={toggleModal} toggle={() => setToggleModal(!toggleModal)}>
-                <ModalHeader toggle={() => setToggleModal(!toggleModal)}>Modal title</ModalHeader>
+                <ModalHeader toggle={() => setToggleModal(!toggleModal)}>{plant.name}</ModalHeader>
                 <ModalBody>
-                    <p>This is a story about a plant</p>
+                    <p>{plant.scientificName}</p>
+                    <p>{plant.description}</p>
                 </ModalBody>
             </Modal>
         </div>
