@@ -13,7 +13,7 @@ const GardenView = ({ plantsData, setPlantsData, toggleGardenView, setToggleGard
             <div>
                 <p style={{ color: "#ffffb5" }} className="font-weight-bold pb-3 h1">Garden View</p>
                 <Container style={{ border: "3px solid #ffffb5", backgroundColor: "#99b898", borderRadius: "4px" }}>
-                    <Row className="d-flex p-3 justify-content-between">
+                    <Row className="d-flex p-3 justify-content-around">
                         {gardenMapper()}
                     </Row>
                 </Container>

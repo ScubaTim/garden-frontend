@@ -19,31 +19,29 @@ const PlantCard = ({ plant, plantsData, setPlantsData }) => {
         setToggleModal(!toggleModal)
     }
 
-
     return (
-        <Card className="text-center  m-3" style={{ width: "180px", backgroundColor: "#f8f8f4" }}>
+        <Card className="text-center m-2 px-2" body style={{ width: "200px", maxWidth: "200px", backgroundColor: "#f8f8f4" }}>
             <Modal toggleModal={toggleModal} setToggleModal={setToggleModal} plant={plant} />
-            <Row className="px-2 pt-1">
+            <Row className="px-2" style={{ marginTop: "-10px" }}>
                 <Col>
                     <Button close onClick={handleRemovePlant} />
                 </Col>
             </Row>
-            <CardBody className="pt-0 pb-2">
-                <Row style={{ marginTop: "-8px" }}>
-                    <Col>
+            <Row>
+                <Col>
+                    <CardTitle tag="h4">{plant.name}</CardTitle>
+                    <span className="text-muted">{plant.scientificName}</span>
+                </Col>
+            </Row>
+            <CardBody className="pt-0 pb-0 d-flex flex-column justify-content-end">
 
-                        <CardTitle tag="h4">{plant.name}</CardTitle>
-
-                    </Col>
-                </Row>
-                <hr className="mt-0 p-0" />
                 <CardText className="text-muted">
-                    <span>{plant.scientificName}</span>
+                    <hr />
                 </CardText>
-
-                <img className="rounded" style={{ width: "138px" }} src={plant.imageURL || image} alt="placeholder" />
-
-                <Button size="sm" block color="success" className="mt-3" onClick={() => togglePlantModal()}>More Info</Button>
+                <div>
+                    <img className="rounded mb-3" style={{ width: "100%" }} src={plant.imageURL || image} alt="placeholder" />
+                    <Button size="sm" block color="success" className="mt-3" onClick={() => togglePlantModal()}>More Info</Button>
+                </div>
             </CardBody >
         </Card>
     )
