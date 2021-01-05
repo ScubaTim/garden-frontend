@@ -1,9 +1,9 @@
-import React from 'react';
-import {
-    Collapse, Navbar, NavbarBrand, Nav, NavItem, NavLink, Button
-} from 'reactstrap';
+import React, { useState } from 'react';
+import { Collapse, Navbar, NavbarBrand, Nav, NavItem, NavLink, Button } from 'reactstrap';
+import Modal from '../modal/Modal'
 
 const Toolbar = ({ toggleGardenView, setToggleGardenView }) => {
+    const [toggleModal, setToggleModal] = useState(false)
 
     return (
         <div className="mb-4">
@@ -12,12 +12,13 @@ const Toolbar = ({ toggleGardenView, setToggleGardenView }) => {
                 <Collapse navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink className="text-dark" href="https://github.com/reactstrap/reactstrap">About</NavLink>
+                            <NavLink className="text-dark" onClick={() => setToggleModal(!toggleModal)} style={{ cursor: "pointer" }}>About</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
                 <Button onClick={() => setToggleGardenView(!toggleGardenView)} color="success">{toggleGardenView ? <span><span className="font-weight-bold">+</span> New Plant</span> : 'Garden View'}</Button>
             </Navbar>
+            <Modal toggleModal={toggleModal} setToggleModal={setToggleModal} aboutGardenly />
         </div>
     );
 }

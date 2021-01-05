@@ -108,7 +108,7 @@ const PlantView = ({ plantsData, setPlantsData, toggleGardenView, setToggleGarde
                                 <FormGroup className="my-4" row>
                                     <Label for="watering"><h6>Optimal Watering:</h6></Label>
                                     <Input required onChange={(e) => setWatering(e.target.value)} type="select" name="watering" id="watering">
-                                        <option>Twice A Day</option>
+                                        <option>2x Daily</option>
                                         <option>Daily</option>
                                         <option>Every Other Day</option>
                                         <option>Weekly</option>
@@ -134,7 +134,7 @@ const PlantView = ({ plantsData, setPlantsData, toggleGardenView, setToggleGarde
                                     <Input type="date" name="plantingDate" required onChange={(e) => setPlantingDate(e.target.value)} id="plantingDate" />
                                 </FormGroup>
                                 <FormGroup className="my-4" row>
-                                    <Label for="sunlight"><h6>Optimal Sunlight:</h6></Label>
+                                    <Label for="sunlight"><h6>Sunlight:</h6></Label>
                                     <Input type="select" required name="sunlight" onChange={(e) => setSunlight(e.target.value)} id="sunlight">
                                         <option>Shade</option>
                                         <option>Moderate</option>
@@ -153,7 +153,7 @@ const PlantView = ({ plantsData, setPlantsData, toggleGardenView, setToggleGarde
                                     <Input type="text" name="timeToHarvest" onChange={(e) => setTimeToHarvest(e.target.value)} id="timeToHarvest" placeholder="Time to Harvest (Optional)" />
                                 </FormGroup>
                                 <FormGroup className="my-4" row>
-                                    <Label for="timeTillSprouting"><h6>Time Till Sprouting:</h6></Label>
+                                    <Label for="timeTillSprouting"><h6>Sprouting Time:</h6></Label>
                                     <Input type="text" name="timeTillSprouting" required onChange={(e) => setSproutsIn(e.target.value)} id="timeTillSprouting" placeholder="Days to sprout" />
                                 </FormGroup>
                                 <FormGroup className="mt-4" row>

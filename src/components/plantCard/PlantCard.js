@@ -20,7 +20,7 @@ const PlantCard = ({ plant, plantsData, setPlantsData }) => {
     }
 
     return (
-        <Card className="text-center m-2 px-2" body style={{ width: "200px", maxWidth: "200px", backgroundColor: "#f8f8f4" }}>
+        <Card className="text-center m-2 px-2" body style={{ width: "300px", maxWidth: "300px", backgroundColor: "#f8f8f4" }}>
             <Modal toggleModal={toggleModal} setToggleModal={setToggleModal} plant={plant} />
             <Row className="px-2" style={{ marginTop: "-10px" }}>
                 <Col>
