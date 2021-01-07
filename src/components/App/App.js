@@ -22,7 +22,7 @@ const App = () => {
 
   return (
     <>
-      <Toolbar plantsData={plantsData} toggleGardenView={toggleGardenView} setToggleGardenView={setToggleGardenView} />
+      <Toolbar plantsData={plantsData} toggleGardenView={toggleGardenView} setToggleGardenView={setToggleGardenView} loggedIn={loggedIn} />
       <Container className="App pb-5">
         {loggedIn ? <GardenView plantsData={plantsData} setPlantsData={setPlantsData} toggleGardenView={toggleGardenView} setToggleGardenView={setToggleGardenView} /> : <UserLogin />}
       </Container>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Collapse, Navbar, NavbarBrand, Nav, NavItem, NavLink, Button } from 'reactstrap';
 import Modal from '../modal/Modal'
 
-const Toolbar = ({ toggleGardenView, setToggleGardenView }) => {
+const Toolbar = ({ toggleGardenView, setToggleGardenView, loggedIn }) => {
     const [toggleModal, setToggleModal] = useState(false)
 
     return (
@@ -16,7 +16,7 @@ const Toolbar = ({ toggleGardenView, setToggleGardenView }) => {
                         </NavItem>
                     </Nav>
                 </Collapse>
-                <Button onClick={() => setToggleGardenView(!toggleGardenView)} color="success">{toggleGardenView ? <span><span className="font-weight-bold">+</span> New Plant</span> : 'Garden View'}</Button>
+                {loggedIn ? <Button onClick={() => setToggleGardenView(!toggleGardenView)} color="success">{toggleGardenView ? <span><span className="font-weight-bold">+</span> New Plant</span> : 'Garden View'}</Button> : <Button disabled color="success">Garden View</Button>}
             </Navbar>
             <Modal toggleModal={toggleModal} setToggleModal={setToggleModal} aboutGardenly />
         </div>

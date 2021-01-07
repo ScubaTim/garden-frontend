@@ -8,7 +8,7 @@ const UserLogin = (props) => {
                 <CardBody>
                     <CardTitle className="text-center" tag="h3">User Login</CardTitle>
                     <hr />
-                    <CardText className="text-muted mb-4">Don't have an account? <a className="text-muted font-weight-bold" href="/">Sign Up</a> </CardText>
+                    <CardText className="text-muted font-italic mb-4">Don't have an account? <a className="text-muted font-weight-bold" href="/">Sign Up</a> </CardText>
                     <Form>
                         <FormGroup>
                             <Label for="userName">User Name:</Label>
